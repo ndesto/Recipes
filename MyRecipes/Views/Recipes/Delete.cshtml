@@ -1,0 +1,21 @@
+﻿@model Recipe
+@{
+    ViewData["Title"] = "Delete";
+}
+<div class="text-center">
+    <h3>Изтриване на рецепта</h3>
+
+    @using (Html.BeginForm("Delete", "Recipes", FormMethod.Post))
+    {
+        <div class="display-field text-uppercase">
+            @Html.DisplayFor(model => model.Name)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Description)
+        </div>
+        <button class="myButton" type="submit">Изтрий</button>
+    }
+</div>
+
+
+

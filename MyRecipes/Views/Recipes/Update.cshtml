@@ -1,0 +1,30 @@
+﻿@model Recipe
+@{
+    ViewData["Title"] = "Update page";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width = device-width" />
+    <title>Update</title>
+</head>
+
+<body>
+    <div class="text-center">
+        <h3>Промени рецепта</h3>
+
+        @using (Html.BeginForm("Update", "Recipes", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            @Html.HiddenFor(model => model.ID)
+
+                <p>Промени име:</p>
+            @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
+                <p>Промени описание:</p>
+            @Html.TextBoxFor(model => model.Description, new { @class = "form-control" })
+            <button class="myButton" type="submit">Обнови</button>
+        }
+    </div>
+</body>
+</html>
